@@ -20,8 +20,8 @@ Ulrich Lukas, 2017-03-03
 import time
 import struct
 import wiringpi as wp
-from ADS1256_definitions import *
-import ADS1256_default_config
+from PiPyADC.ADS1256_definitions  import *
+import PiPyADC.ADS1256_default_config
 
 class ADS1256(object):
     """Python class for interfacing the ADS1256 and ADS1255 analog to
@@ -265,7 +265,7 @@ class ADS1256(object):
     # Register/Configuration Flag settings are initialized, but these
     # can be changed during runtime via class properties.
     # Default config is read from external file (module) import
-    def __init__(self, conf=ADS1256_default_config):
+    def __init__(self, conf=PiPyADC.ADS1256_default_config):
         # Set up the wiringpi object to use physical pin numbers
         wp.wiringPiSetupPhys()
         # Config and initialize the SPI and GPIO pins used by the ADC.
